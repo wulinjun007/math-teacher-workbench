@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>产品说明 · 数学教师成长工作台</title>
+<meta name="description" content="产品定位、内容来源与审核流程、纠错入口、服务边界说明。">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="about">
+
+<div class="notice">
+  <div class="notice__inner">
+    <span class="notice__dot"></span>
+    当前为交互原型（G1）：全部内容为 PRD 原创演示，<strong>未经专业教师复核</strong>，不可直接用于正式教学。
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+    <nav class="nav__menu" aria-label="主导航">
+      <a class="nav__link" href="../">首页</a>
+      <a class="nav__link" href="../topics/monotonicity/">专题 · 单调性</a>
+      <a class="nav__link" href="../workspace/">工作台</a>
+      <a class="nav__link" href="../records/">我的记录</a>
+      <a class="nav__link is-active" href="./">说明</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--pill-dark" href="#errata">提交纠错</a>
+      <button class="nav__burger" aria-expanded="false" aria-label="打开菜单"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="pagehead" style="padding-bottom:0;">
+  <p class="pagehead__eyebrow">说明</p>
+  <h1 class="pagehead__title">这个网站是什么，不是什么</h1>
+</section>
+
+<div class="article">
+
+  <section>
+    <h2><span class="h2-no">1</span>产品定位</h2>
+    <p>面向<strong>个人高中数学教师</strong>的任务型专业成长网站：围绕一节课中的具体困难，提供经过审核的短训、教学示范、练习反馈与方案编辑工具，帮助老师形成可在课堂中使用的改进方案。</p>
+    <p>网站<strong>不</strong>面向学生提供课程；不做学生账户、班级名册、成绩管理、作业批改、家校沟通、机构管理、多讲师入驻、直播排课、培训学时认证或官方证书。教师培训与学生培训的边界持续保持清晰。</p>
+    <div class="callout">
+      <span class="callout__lead">承诺边界：</span>页面文案只承诺提供"教学改进练习与参考"；<strong>不承诺</strong>学生提分、教师职称晋升、官方认证，或人工智能答案绝对正确（首版也不含 AI 功能）。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">2</span>内容来源与审核流程</h2>
+    <p>首期内容为产品需求文档（PRD V0.1，2026-10-02）中的<strong>原创演示</strong>，作者角色为项目发起者；按发布流程，须经另一名有相应教学经验的教师<strong>独立复核</strong>数学正确性与教学适切性后，才能去掉"草稿"标记。</p>
+    <div class="chain" style="padding:6px 0 12px;justify-content:flex-start;">
+      <span class="chain__step">内容教师编写</span><span class="chain__arrow">→</span>
+      <span class="chain__step">独立复核数学</span><span class="chain__arrow">→</span>
+      <span class="chain__step">复核教学适切性</span><span class="chain__arrow">→</span>
+      <span class="chain__step">网页与导出检查</span><span class="chain__arrow">→</span>
+      <span class="chain__step">发布冻结版本</span><span class="chain__arrow">→</span>
+      <span class="chain__step">接收纠错</span>
+    </div>
+    <p>课程标准的对照状态：普通高中数学课程标准 2025 修订版<strong>存在性已核验</strong>；逐条内容与教材映射<strong>尚未核对</strong>，全站统一标注"教材未映射"。引用官方条目时，将附实际核对的出处和定位。</p>
+    <p>版权策略：默认使用原创内容、书面授权材料，或仅链接到允许访问的官方资源；不以未经授权的教材扫描、付费题库搬运和整课视频转载作为内容供给。</p>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">3</span>服务边界（首版）</h2>
+    <ul>
+      <li><strong>无账号、无云同步：</strong>草稿、练习、复盘保存在你的浏览器本地；换设备或清除数据不会自动恢复，请使用备份导出/导入。</li>
+      <li><strong>无支付：</strong>首版公开站不实现支付或付费内容鉴权；付费试点将在具备合法收款与交付机制后另行开展。</li>
+      <li><strong>无 AI 功能：</strong>反馈来自审核过的参考分析与任务级量规，不采用自动评分；未来引入 AI 时仅做受控建议并明确标识。</li>
+      <li><strong>导出说明：</strong>不承诺复制到 Word 后公式仍可编辑；调用打印窗口只记录"发起打印"，不代表打印或保存成功。</li>
+      <li><strong>暂用名：</strong>"数学教师成长工作台"为暂用名，正式名称、商标与域名待定。</li>
+    </ul>
+  </section>
+
+  <section id="errata">
+    <h2><span class="h2-no">4</span>纠错入口</h2>
+    <p>发现数学错误、表述歧义或图文不一致，请按下表提交。生成结构化纠错文本后，正式反馈渠道确定前请妥善保存（严重问题会先撤下公开内容，旧方案会显示版本提示）。</p>
+    <div class="ws__panel" style="margin-bottom:0;">
+      <form id="errata-form">
+        <div class="grid grid--2">
+          <label class="field"><span class="field__label">内容编号</span>
+            <select id="errata-unit">
+              <option value="MT-MONO-U1">MT-MONO-U1 概念引入</option>
+              <option value="MT-MONO-U2">MT-MONO-U2 定义与证明</option>
+              <option value="MT-MONO-U3">MT-MONO-U3 错误诊断</option>
+              <option value="MT-SITE">站点其他页面</option>
+            </select></label>
+          <label class="field"><span class="field__label">内容版本</span>
+            <input type="text" id="errata-version" value="v0.1.0" placeholder="v0.1.0"></label>
+        </div>
+        <label class="field"><span class="field__label">位置 <span class="opt">（选填：小节 / 练习题号）</span></span>
+          <input type="text" id="errata-loc" placeholder="例如：U2 示范讲法 · 五步问题链第 3 步"></label>
+        <label class="field"><span class="field__label">问题描述</span>
+          <textarea id="errata-desc" placeholder="请描述问题：哪里不对 / 应该是什么 / 依据是什么"></textarea></label>
+        <div class="practice__actions">
+          <button type="submit" class="btn btn--pill-sm">生成纠错文本（自动下载 .txt）</button>
+          <button type="button" class="btn btn--ghost-sm" id="errata-copy">复制纠错文本</button>
+        </div>
+      </form>
+      <pre class="errata-output is-hidden" id="errata-output"></pre>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">5</span>联系与阶段</h2>
+    <p class="dim">本站处于 PRD 里程碑 G1（交互原型）：验证"从进入到复盘"的关键流程是否可理解、编辑与导出是否构成阻塞。下一阶段（G2）需先完成内容教师与独立复核教师的安排。目标读者如对定位、内容或流程有建议，欢迎通过纠错入口反馈。</p>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="nav__logo" href="../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+      <p>帮助个人高中数学教师，把一个教学难点转化为可复盘的课堂改进任务。暂用名，正式名称与域名待定。</p>
+    </div>
+    <div class="footer__links">
+      <a href="../">首页</a>
+      <a href="../topics/monotonicity/">单调性专题</a>
+      <a href="../workspace/">工作台</a>
+      <a href="../records/">我的记录</a>
+      <a href="privacy/">隐私与数据</a>
+    </div>
+  </div>
+  <div class="footer__note">
+    交互原型 G1 · 内容为 PRD 原创演示，未经专业教师复核，不可直接用于正式教学 · 数据仅保存在本浏览器 · 不收集学生个人信息。
+  </div>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

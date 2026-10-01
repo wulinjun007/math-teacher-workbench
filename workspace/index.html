@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教学片段编辑工作台 · 数学教师成长工作台</title>
+<meta name="description" content="填写可观察目标、问题链、预期错误与理解检查四项，形成约 10 分钟的课堂活动；本地自动保存，可打印、导出与备份。">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="workspace">
+
+<div class="notice">
+  <div class="notice__inner">
+    <span class="notice__dot"></span>
+    草稿仅保存在<strong>本浏览器</strong>（不是云端）；清除站点数据会丢失记录，请定期「导出备份」。
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+    <nav class="nav__menu" aria-label="主导航">
+      <a class="nav__link" href="../">首页</a>
+      <a class="nav__link" href="../topics/monotonicity/">专题 · 单调性</a>
+      <a class="nav__link is-active" href="./">工作台</a>
+      <a class="nav__link" href="../records/">我的记录</a>
+      <a class="nav__link" href="../about/">说明</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--pill-dark" href="../topics/monotonicity/">回到专题</a>
+      <button class="nav__burger" aria-expanded="false" aria-label="打开菜单"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="pagehead" style="padding-bottom:0;">
+  <p class="pagehead__eyebrow">F04 · 教学片段编辑工作台</p>
+  <h1 class="pagehead__title">把方法改写成<strong>你的</strong>课堂片段</h1>
+  <p class="section-sub" style="margin-bottom:8px;">目标产物是一段约 10 分钟的课堂活动，不要求一次完成整节教案。停止输入后自动保存；四个核心字段完整后才能以完整稿导出。</p>
+</section>
+
+<div class="ws">
+  <aside class="ws__side no-print">
+    <div class="ws__side-head">我的草稿</div>
+    <div class="ws__new">
+      <label class="field" style="margin-bottom:0;">
+        <span class="field__label">新建片段 · 选择单元</span>
+        <select id="ws-new-unit">
+          <option value="concept-intro">U1 概念引入</option>
+          <option value="definition-proof">U2 定义与证明</option>
+          <option value="error-diagnosis">U3 错误诊断</option>
+        </select>
+      </label>
+      <button type="button" class="btn btn--pill-sm" id="ws-create">＋ 新建教学片段</button>
+    </div>
+    <ul class="ws__list" id="ws-list"></ul>
+    <div class="shell__side-foot" style="padding:10px 4px 2px;border-top:none;"><span class="status-dot"></span>本地存储 · 定期导出备份</div>
+  </aside>
+
+  <main class="ws__main">
+    <div class="empty is-hidden" id="ws-empty">
+      <h2>从一个单元开始</h2>
+      <p>还没有教学片段。选择一个训练单元，工作台会替你准备好四项核心字段的骨架。</p>
+      <div class="practice__actions" style="justify-content:center;">
+        <a class="btn btn--pill-sm" href="?unit=concept-intro&amp;new=1">U1 概念引入</a>
+        <a class="btn btn--pill-sm" href="?unit=definition-proof&amp;new=1">U2 定义与证明</a>
+        <a class="btn btn--pill-sm" href="?unit=error-diagnosis&amp;new=1">U3 错误诊断</a>
+      </div>
+    </div>
+
+    <div id="ws-editor" class="is-hidden">
+      <div class="ws__panel">
+        <div class="ws__panel-head">
+          <h2>基本信息</h2>
+          <span class="dim" id="ws-unit-label"></span>
+        </div>
+        <label class="field"><span class="field__label">片段标题 <span class="opt">（可自定义，导出时使用）</span></span>
+          <input type="text" id="f-title" placeholder="例如：单调性第一课时 · 概念引入片段"></label>
+        <p class="dim" id="ws-draft-meta" style="font-size:12px;color:var(--lv-ink-3);margin:0;"></p>
+      </div>
+
+      <div class="ws__panel">
+        <div class="ws__panel-head">
+          <h2>四项核心字段</h2>
+          <span class="dim">缺字段可存草稿，但只能以「未完成草稿」导出</span>
+        </div>
+
+        <label class="field"><span class="field__label">一、可观察目标 <span class="req">*</span></span>
+          <span class="field__hint">写出学生"能做到什么"，而不是"了解了什么"。例如：能解释任意两点与举两个数值例子的差别。</span>
+          <textarea id="f-goal" placeholder="学生能……（可观察、可检查）"></textarea></label>
+
+        <div class="field"><span class="field__label">二、问题链 <span class="req">*</span></span>
+          <span class="field__hint">按步骤填写：提问 → 预期回应 → 必要追问。这是给"约 10 分钟课堂活动"用的，不是整节教案。</span>
+          <div class="chain-editor" id="chain-editor"></div>
+          <div style="margin-top:10px;"><button type="button" class="btn btn--ghost-sm chain-add" id="chain-add">＋ 加一步</button></div>
+        </div>
+
+        <label class="field"><span class="field__label">三、预期错误与回应 <span class="req">*</span></span>
+          <span class="field__hint">学生最可能在哪里出错？你准备如何回应？</span>
+          <textarea id="f-errors" placeholder="例如：学生用 f(1)、f(2) 代替任意两点论证 → 追问：这两个点能代表全部吗？"></textarea></label>
+
+        <label class="field"><span class="field__label">四、理解检查 <span class="req">*</span></span>
+          <span class="field__hint">给出检查问题及判断依据；不能只写"学生会了"。</span>
+          <textarea id="f-check" placeholder="例如：问『两个例子为什么不够』，能说清『例子≠论证』即视为通过。"></textarea></label>
+
+        <label class="field"><span class="field__label">教学条件 <span class="opt">（选填）</span></span>
+          <span class="field__hint">课时、学生先备知识、教材背景。不录入学生姓名或成绩。</span>
+          <input type="text" id="f-conditions" placeholder="例如：周五第 3 节，40 分钟；学生已学函数图像"></label>
+
+        <label class="field" style="margin-bottom:0;"><span class="field__label" style="display:flex;align-items:center;gap:8px;font-weight:500;">
+          <input type="checkbox" id="f-selfcheck" style="width:16px;height:16px;accent-color:#211a2a;">
+          复核标记：我已检查过数学表述</span>
+          <span class="field__hint">这只是使用者的自查，不改变公开内容的审核状态（内容仍为草稿 · 未复核）。</span></label>
+      </div>
+
+      <div class="ws__panel is-hidden" id="preview-panel">
+        <div class="ws__panel-head">
+          <h2>预览 · 打印稿</h2>
+          <span class="dim">打印 / 另存 PDF 时仅打印此区域</span>
+        </div>
+        <div class="preview-doc"></div>
+      </div>
+
+      <div class="ws__bar no-print">
+        <span class="ws__savestate" id="ws-savestate"><span class="dot"></span>尚未保存</span>
+        <span class="spacer"></span>
+        <button type="button" class="btn btn--ghost-sm" id="btn-preview">预览</button>
+        <button type="button" class="btn btn--ghost-sm" id="btn-print">打印 / 另存 PDF</button>
+        <button type="button" class="btn btn--ghost-sm" id="btn-copy">复制文本</button>
+        <button type="button" class="btn btn--ghost-sm" id="btn-md">下载 Markdown</button>
+        <button type="button" class="btn btn--ghost-sm" id="btn-json">导出备份</button>
+        <button type="button" class="btn btn--ghost-sm" id="btn-fork">复制为新版本</button>
+        <button type="button" class="btn btn--quiet" id="btn-del">删除草稿</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="nav__logo" href="../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+      <p>帮助个人高中数学教师，把一个教学难点转化为可复盘的课堂改进任务。暂用名，正式名称与域名待定。</p>
+    </div>
+    <div class="footer__links">
+      <a href="../">首页</a>
+      <a href="../topics/monotonicity/">单调性专题</a>
+      <a href="../records/">我的记录</a>
+      <a href="../about/">说明</a>
+      <a href="../privacy/">隐私与数据</a>
+    </div>
+  </div>
+  <div class="footer__note">
+    草稿仅保存在本浏览器 · 导出动作 ≠ 已实际用于课堂，使用情况请在「我的记录」如实登记 · 不承诺复制到 Word 后公式仍可编辑。
+  </div>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+<script>
+  // 工作台侧栏「新建」按钮（依赖 app.js 的存储层，放于其后）
+  (function () {
+    document.getElementById('ws-create').addEventListener('click', function () {
+      var unit = document.getElementById('ws-new-unit').value;
+      location.href = '?unit=' + encodeURIComponent(unit) + '&new=1';
+    });
+  })();
+</script>
+</body>
+</html>

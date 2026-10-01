@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U3 错误诊断 · 函数单调性 · 数学教师成长工作台</title>
+<meta name="description" content="识别遗漏区间、量词不完整、用特例代替证明，给出追问与修正；带走一张错误—追问—修正卡。">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body data-page="learn" data-unit="error-diagnosis">
+
+<div class="notice">
+  <div class="notice__inner">
+    <span class="notice__dot"></span>
+    当前为交互原型（G1）：全部内容为 PRD 原创演示，<strong>未经专业教师复核</strong>，不可直接用于正式教学。
+    <a href="../../about/">审核说明与纠错入口</a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="../../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+    <nav class="nav__menu" aria-label="主导航">
+      <a class="nav__link" href="../../">首页</a>
+      <a class="nav__link is-active" href="../../topics/monotonicity/">专题 · 单调性</a>
+      <a class="nav__link" href="../../workspace/">工作台</a>
+      <a class="nav__link" href="../../records/">我的记录</a>
+      <a class="nav__link" href="../../about/">说明</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--pill-dark" href="#practice">做练习</a>
+      <button class="nav__burger" aria-expanded="false" aria-label="打开菜单"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="pagehead">
+  <p class="pagehead__eyebrow">函数单调性 · 单元 U3 / 3 · 内容编号 MT-MONO-U3</p>
+  <h1 class="pagehead__title">错误诊断：从"打叉"到"追问"</h1>
+  <div class="pagehead__tags">
+    <span class="tag tag--draft">v0.1.0 草稿 · 未复核</span>
+    <span class="tag">教材未映射</span>
+    <span class="tag">先修 U2</span>
+    <span class="tag tag--plain">更新 2026-10-02</span>
+  </div>
+</section>
+
+<div class="article">
+
+  <section>
+    <h2><span class="h2-no">1</span>教学困难与先备条件</h2>
+    <p><strong>教学困难：</strong>学生作业中的单调性错误反复出现——漏写区间、量词不完整、拿特例当证明；教师批改时只打叉或写"错"，学生改了答案却没改理解。</p>
+    <div class="infobox">
+      <p><strong>先备条件：</strong>完成 U2（或你已能独立完成"任取两点"的符号论证）——诊断卡里的追问全部指向定义要素，自己不熟定义就写不出追问。</p>
+      <p><strong>材料边界：</strong>练习中不需要、也不应该录入学生姓名或成绩；诊断对象是"错误类型"，不是"某个学生"。</p>
+    </div>
+    <div class="callout">
+      <span class="callout__lead">本单元的可观察目标：</span>对三类典型错误中的每一类，教师能写出一条指向定义要素的追问，和一句学生可以自己执行的修正动作。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">2</span>示范：错误—追问—修正卡</h2>
+    <p>三类错误分别对应定义的三个要素：<strong>区间（在哪里比）、量词（怎么取点）、论证（为什么成立）</strong>。诊断的第一步永远是定位类型，而不是判断对错。</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th style="width:7.5em;">错误类型</th><th>典型原话</th><th>教师追问</th><th>修正动作（学生可执行）</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>遗漏区间</strong><br><span style="font-size:12px;color:var(--lv-ink-3);">在哪里比</span></td>
+            <td>"<span class="formula"><i>f</i>(<i>x</i>)=1/<i>x</i></span> 是减函数。"</td>
+            <td>"你是在哪个范围上比较的？取 <span class="formula"><i>x</i><sub>1</sub>=−1</span>、<span class="formula"><i>x</i><sub>2</sub>=1</span>，比较一下 <span class="formula"><i>f</i>(<i>x</i><sub>1</sub>)</span> 和 <span class="formula"><i>f</i>(<i>x</i><sub>2</sub>)</span>。"</td>
+            <td>先写出区间，再说升降：<span class="formula"><i>f</i>(<i>x</i>)</span> 在 <span class="formula">(−∞,0)</span> 和 <span class="formula">(0,+∞)</span> 上分别递减（并集上不成立）。</td>
+          </tr>
+          <tr>
+            <td><strong>量词不完整</strong><br><span style="font-size:12px;color:var(--lv-ink-3);">怎么取点</span></td>
+            <td>"<span class="formula"><i>x</i></span> 越大 <span class="formula"><i>y</i></span> 越大。"</td>
+            <td>"'越大'是指哪两个 <span class="formula"><i>x</i></span>？任取两点、在同一个区间里，你怎么比较？"</td>
+            <td>改说完整：在区间内任取 <span class="formula"><i>x</i><sub>1</sub>&lt;<i>x</i><sub>2</sub></span>，都有 <span class="formula"><i>f</i>(<i>x</i><sub>1</sub>)&lt;<i>f</i>(<i>x</i><sub>2</sub>)</span>。</td>
+          </tr>
+          <tr>
+            <td><strong>特例代证明</strong><br><span style="font-size:12px;color:var(--lv-ink-3);">为什么成立</span></td>
+            <td>"<span class="formula"><i>f</i>(1)&lt;<i>f</i>(3)</span>，所以在 [0,3] 上递增。"</td>
+            <td>"1 和 3 能代表 [0,3] 里的所有点吗？再取 <span class="formula"><i>x</i>=2</span> 试试；那剩下的点呢？"</td>
+            <td>说明"例子只能支持猜想"；要断定整段，需对任意两点论证（本阶段可先写出待证目标）。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <span class="callout__lead">为什么第 1 行成立而"并集"不成立：</span>取 <span class="formula">−1 &lt; 1</span>，则 <span class="formula"><i>f</i>(−1)=−1 &lt; 1=<i>f</i>(1)</span>——在两段分别递减的函数，跨过断点可以"升回去"。所以"分别在两区间递减"与"在并集上递减"是两句话。
+    </div>
+
+    <h3>批改时的三问（可贴在办公桌上）</h3>
+    <div class="chain" style="padding:6px 0 4px;justify-content:flex-start;">
+      <span class="chain__step">① 在<strong>哪个区间</strong>？</span><span class="chain__arrow">→</span>
+      <span class="chain__step">② 点是<strong>任取</strong>的吗？</span><span class="chain__arrow">→</span>
+      <span class="chain__step">③ <strong>每个例子</strong>能代表全部吗？</span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">3</span>为何这样讲</h2>
+    <ul>
+      <li><strong>批改从"给结论"转向"给追问"</strong>：学生照着追问自己修正，比抄一个正确答案更接近理解；追问把批改变成一次微型教学。</li>
+      <li><strong>三类错误对应定义三要素</strong>：定位类型后，追问与修正是有结构的，不依赖灵感。</li>
+      <li><strong>修正动作必须学生可执行</strong>："写出你比较的两点"是动作；"以后仔细点"不是。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">4</span>何时不适用</h2>
+    <ul>
+      <li><strong>不把诊断卡直接当题库发给学生：</strong>先由教师改编成该生能读懂的话；追问的语言要贴合班级。</li>
+      <li><strong>不用"扣分"驱动诊断：</strong>诊断卡的目标是修正理解，不是排名与惩戒。</li>
+      <li><strong>跨单元迁移要重审：</strong>奇偶性、指数函数的"任意"与"区间"各有自己的要素，追问需重新设计（见练习 3）。</li>
+    </ul>
+  </section>
+
+  <section id="practice">
+    <h2><span class="h2-no">5</span>练习：诊断 · 写卡 · 迁移</h2>
+    <p class="dim" style="margin-bottom:16px;">可以先写初始思路再提交；查看参考分析不要求答对。回答保存在你的浏览器，可到<a href="../../records/" style="text-decoration:underline;">我的记录</a>查看。</p>
+
+    <div class="practice" data-practice data-unit="error-diagnosis" data-qid="q1">
+      <div class="practice__head">
+        <div><strong>练习 1 · 定位错误类型</strong><span class="practice__kind"> · 判断题</span></div>
+        <span class="tag" data-state-badge>未回答</span>
+      </div>
+      <p class="practice__prompt">学生作业写道："<span class="formula"><i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup></span> 在 [0,2] 和 [2,4] 上都递增，所以它在 [0,4] 上递增。"这句推理的问题在哪里？</p>
+      <div class="practice__answer">
+        <fieldset class="choice">
+          <label><input type="radio" name="u3q1" value="A">A．属于"特例代证明"，应该多举几个例子</label>
+          <label><input type="radio" name="u3q1" value="B">B．推理不成立："分段递增"推不出"并集上递增"；此题结论碰巧正确，但理由无效</label>
+          <label><input type="radio" name="u3q1" value="C">C．没有问题，区间写清楚了</label>
+        </fieldset>
+        <label class="field"><span class="field__label">你的理由 / 你会怎么追问（必填其一）</span>
+          <textarea placeholder="写出你准备说给学生的一句话……"></textarea></label>
+        <div class="practice__actions">
+          <button type="button" class="btn btn--pill-sm" data-action="submit">提交回答</button>
+          <button type="button" class="btn btn--ghost-sm" data-action="view-ref">查看参考分析</button>
+          <span class="practice__saved"></span>
+        </div>
+      </div>
+      <div class="reference is-hidden">
+        <h4>参考分析 <span class="tag tag--plain">唯一参考，不是唯一标准</span></h4>
+        <p><strong>参考答案：B。</strong>结论在本题碰巧正确，但"分别在 [0,2]、[2,4] 递增 ⟹ 在 [0,4] 递增"这一推理不成立。反例：<span class="formula"><i>g</i>(<i>x</i>)=1/<i>x</i></span> 在 <span class="formula">(−∞,0)</span> 与 <span class="formula">(0,+∞)</span> 上分别递减，却不能说在并集上递减——取 <span class="formula">−1 &lt; 1</span>，<span class="formula"><i>g</i>(−1)=−1 &lt; 1=<i>g</i>(1)</span>。正确写法是任取 <span class="formula">0 ≤ <i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub> ≤ 4</span> 直接论证。</p>
+        <p>可选追问："换成 <span class="formula">1/<i>x</i></span>，你的推理还成立吗？"——用一个反例让推理自身失效，比直接判错更有教学价值。</p>
+      </div>
+    </div>
+
+    <div class="practice" data-practice data-unit="error-diagnosis" data-qid="q2">
+      <div class="practice__head">
+        <div><strong>练习 2 · 写你自己的诊断卡</strong><span class="practice__kind"> · 改写题</span></div>
+        <span class="tag" data-state-badge>未回答</span>
+      </div>
+      <p class="practice__prompt">回忆你班上真实出现过的单调性错误（<strong>不要写学生姓名</strong>），按"错误—追问—修正"三栏写一张诊断卡。</p>
+      <div class="practice__answer">
+        <label class="field"><span class="field__label">错误原话（匿名）</span>
+          <textarea placeholder="学生作业 / 课堂回答的原话，去掉姓名……"></textarea></label>
+        <label class="field"><span class="field__label">你的追问</span>
+          <textarea placeholder="指向定义要素（区间 / 任取 / 论证）的一句话……"></textarea></label>
+        <label class="field"><span class="field__label">修正动作（学生可执行）</span>
+          <textarea placeholder="学生照着能自己完成的具体动作……"></textarea></label>
+        <div class="practice__actions">
+          <button type="button" class="btn btn--pill-sm" data-action="submit">提交回答</button>
+          <button type="button" class="btn btn--ghost-sm" data-action="view-ref">查看参考分析</button>
+          <span class="practice__saved"></span>
+        </div>
+      </div>
+      <div class="reference is-hidden">
+        <h4>参考分析 <span class="tag tag--plain">开放题，以下是参考要点</span></h4>
+        <ul>
+          <li>追问应指向定义要素（在哪里比 / 怎么取点 / 为什么成立），而不是直接给出答案。</li>
+          <li>修正话术应是学生可执行的动作："写出你比较的两点，再检查符号"——而非"以后仔细点"。</li>
+          <li>自查重点：三类错误（遗漏区间 / 量词不完整 / 特例代证明）定位是否准确，不混淆"范围"与"量词"。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="practice" data-practice data-unit="error-diagnosis" data-qid="q3">
+      <div class="practice__head">
+        <div><strong>练习 3 · 新情境迁移</strong><span class="practice__kind"> · 独立保存</span></div>
+        <span class="tag" data-state-badge>未回答</span>
+      </div>
+      <p class="practice__prompt">把三类追问结构迁移到"函数的奇偶性"（或你正在教的其他单元）：哪些结构可复用？哪些必须替换？</p>
+      <div class="practice__answer">
+        <label class="field"><span class="field__label">你的迁移分析</span>
+          <textarea placeholder="对照三栏：错误类型定位 / 追问 / 修正，逐项判断可复用性……"></textarea></label>
+        <div class="practice__actions">
+          <button type="button" class="btn btn--pill-sm" data-action="submit">提交回答</button>
+          <button type="button" class="btn btn--ghost-sm" data-action="view-ref">查看参考分析</button>
+          <span class="practice__saved"></span>
+        </div>
+      </div>
+      <div class="reference is-hidden">
+        <h4>参考分析 <span class="tag tag--plain">参考要点</span></h4>
+        <p><strong>可复用的结构：</strong>先定位错误类型 → 用追问指向定义要素 → 给出可执行修正。<strong>必须替换的内容：</strong>奇偶性的"任意 <span class="formula"><i>x</i></span>"是定义域上的全称量词（对 <span class="formula"><i>x</i></span> 与 <span class="formula">−<i>x</i></span> 同时成立），追问要转向 <span class="formula"><i>f</i>(−<i>x</i>)</span> 的计算与定义域本身（如 <span class="formula"><i>f</i>(<i>x</i>)=1/<i>x</i></span> 是奇函数，但定义域不含 0 的说法需要核对区间对称性）。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">6</span>自查量规</h2>
+    <p class="dim" style="margin-bottom:14px;">对照下列四项打分（0＝缺失，1＝部分具备，2＝清楚且可执行）。量规分值只是本项目的评审工具，不是教师专业资质评价。</p>
+    <div class="rubric" data-rubric="error-diagnosis">
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>自查项</th><th style="width:190px;">评分</th></tr></thead>
+          <tbody>
+            <tr><td>数学表述正确：区间、量词、反例的使用无误</td><td class="rubric-cell"><label><input type="radio" name="rub-ed-1" value="0">0</label><label><input type="radio" name="rub-ed-1" value="1">1</label><label><input type="radio" name="rub-ed-1" value="2">2</label></td></tr>
+            <tr><td>三类错误定位准确（不混淆"范围"与"量词"）</td><td class="rubric-cell"><label><input type="radio" name="rub-ed-2" value="0">0</label><label><input type="radio" name="rub-ed-2" value="1">1</label><label><input type="radio" name="rub-ed-2" value="2">2</label></td></tr>
+            <tr><td>追问指向定义要素，而不是直接给答案</td><td class="rubric-cell"><label><input type="radio" name="rub-ed-3" value="0">0</label><label><input type="radio" name="rub-ed-3" value="1">1</label><label><input type="radio" name="rub-ed-3" value="2">2</label></td></tr>
+            <tr><td>修正建议是学生可执行的动作</td><td class="rubric-cell"><label><input type="radio" name="rub-ed-4" value="0">0</label><label><input type="radio" name="rub-ed-4" value="1">1</label><label><input type="radio" name="rub-ed-4" value="2">2</label></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <label class="rubric-veto"><input type="checkbox" data-role="veto">否决标记：我发现自己的表述存在数学错误（反例、区间、量词），需要先修正再进入改课。</label>
+      <p class="rubric-score" style="margin-top:8px;"><b>未评分</b> · 保存于本浏览器</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">7</span>完成练习，配置你的批改追问</h2>
+    <p>到工作台把你的诊断经验写成教学片段：哪些错误出现在你的班里、你准备怎么追问、理解检查怎么设计。</p>
+    <div class="practice__actions" style="margin-top:18px;">
+      <a class="btn btn--pill-deep" href="../../workspace/?unit=error-diagnosis&amp;new=1">进入工作台，写我的诊断卡
+        <span class="btn__badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M6 4h6v6"/></svg></span>
+      </a>
+      <a class="btn btn--ghost" href="../concept-intro/">回看 U1 概念引入</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="nav__logo" href="../../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+      <p>帮助个人高中数学教师，把一个教学难点转化为可复盘的课堂改进任务。暂用名，正式名称与域名待定。</p>
+    </div>
+    <div class="footer__links">
+      <a href="../../">首页</a>
+      <a href="../../topics/monotonicity/">单调性专题</a>
+      <a href="../../workspace/">工作台</a>
+      <a href="../../records/">我的记录</a>
+      <a href="../../about/">说明</a>
+    </div>
+  </div>
+  <div class="footer__note">
+    MT-MONO-U3 · v0.1.0 草稿（未复核）· 2026-10-02 · 练习与草稿仅保存在本浏览器 · 诊断卡练习不录入学生姓名与成绩。
+  </div>
+</footer>
+
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>

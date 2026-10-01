@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U1 概念引入 · 函数单调性 · 数学教师成长工作台</title>
+<meta name="description" content="由变化现象和图像，过渡到区间上的比较关系；带走一段引入活动与两个理解检查问题。">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body data-page="learn" data-unit="concept-intro">
+
+<div class="notice">
+  <div class="notice__inner">
+    <span class="notice__dot"></span>
+    当前为交互原型（G1）：全部内容为 PRD 原创演示，<strong>未经专业教师复核</strong>，不可直接用于正式教学。
+    <a href="../../about/">审核说明与纠错入口</a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="../../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+    <nav class="nav__menu" aria-label="主导航">
+      <a class="nav__link" href="../../">首页</a>
+      <a class="nav__link is-active" href="../../topics/monotonicity/">专题 · 单调性</a>
+      <a class="nav__link" href="../../workspace/">工作台</a>
+      <a class="nav__link" href="../../records/">我的记录</a>
+      <a class="nav__link" href="../../about/">说明</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--pill-dark" href="#practice">做练习</a>
+      <button class="nav__burger" aria-expanded="false" aria-label="打开菜单"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="pagehead">
+  <p class="pagehead__eyebrow">函数单调性 · 单元 U1 / 3 · 内容编号 MT-MONO-U1</p>
+  <h1 class="pagehead__title">概念引入：从"看图说话"到比较关系</h1>
+  <div class="pagehead__tags">
+    <span class="tag tag--draft">v0.1.0 草稿 · 未复核</span>
+    <span class="tag">教材未映射</span>
+    <span class="tag">建议最先完成</span>
+    <span class="tag tag--plain">更新 2026-10-02</span>
+  </div>
+</section>
+
+<div class="article">
+
+  <section>
+    <h2><span class="h2-no">1</span>教学困难与先备条件</h2>
+    <p><strong>教学困难：</strong>学生看图像能说出"这个函数越往右越高"，却无法把直觉转成"区间上两个函数值的比较"；引入环节常停留在看图说话，定义出现时缺乏生长点。</p>
+    <div class="infobox">
+      <p><strong>先备条件（学生侧）：</strong>函数概念与记号 <span class="formula"><i>f</i>(<i>x</i>)</span>；函数图像的读法；比较两个具体数的大小。<strong>尚未学习导数；本单元不出现"严格递增"的形式定义与证明（那是 U2 的任务）。</strong></p>
+      <p><strong>先备条件（教师侧）：</strong>有一个近期真实课时可用于试用你设计的引入活动。</p>
+    </div>
+    <div class="callout">
+      <span class="callout__lead">本单元的可观察目标：</span>学生能用"在给定区间上任取两个自变量、比较它们的函数值"来描述一段图像的升降，并自己举出一个例子；能回答"只看端点够不够"。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">2</span>示范讲法：三步引入（约 8 分钟）</h2>
+    <h3>第一步 · 从"两个数的比较"进入</h3>
+    <p>不先给图像。先给一个具体情境的两组数（如某地一天中 10 时与 14 时的气温），问：<strong>"哪一刻更热？你是怎么比较的？"</strong>——把"变大 / 变小"落到"两个数比大小"。</p>
+    <h3>第二步 · 图像段：整段上升需要比较"任意两点"</h3>
+    <p>出示一段上升的图像，先让学生用手指"比划出上升"。随后追问：<strong>"你比较了哪两个点？"</strong>"只比较左右两个端点，够说明中间每一段都在上升吗？"</p>
+
+    <figure class="figure">
+      <div class="figure__canvas">
+        <svg viewBox="0 0 560 300" role="img" aria-label="示意图：一段上升的曲线上任取两点比较函数值">
+          <line x1="50" y1="260" x2="530" y2="260" stroke="rgba(44,42,46,.25)" stroke-width="1"/>
+          <line x1="50" y1="260" x2="50" y2="30" stroke="rgba(44,42,46,.25)" stroke-width="1"/>
+          <path d="M90,225 C200,205 330,140 500,55" fill="none" stroke="#1c2415" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="190" cy="196" r="5" fill="#211a2a"/>
+          <circle cx="410" cy="97" r="5" fill="#211a2a"/>
+          <line x1="190" y1="196" x2="190" y2="260" stroke="rgba(44,42,46,.35)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="410" y1="97" x2="410" y2="260" stroke="rgba(44,42,46,.35)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="190" y1="196" x2="50" y2="196" stroke="rgba(44,42,46,.35)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="410" y1="97" x2="50" y2="97" stroke="rgba(44,42,46,.35)" stroke-width="1" stroke-dasharray="4 4"/>
+          <text x="176" y="278" font-size="13" font-style="italic" font-family="Georgia, serif" fill="#2c2a2e">x₁</text>
+          <text x="404" y="278" font-size="13" font-style="italic" font-family="Georgia, serif" fill="#2c2a2e">x₂</text>
+          <text x="14" y="200" font-size="12" font-style="italic" font-family="Georgia, serif" fill="#2c2a2e">f(x₁)</text>
+          <text x="12" y="100" font-size="12" font-style="italic" font-family="Georgia, serif" fill="#2c2a2e">f(x₂)</text>
+          <text x="300" y="150" font-size="12" fill="#1c2415">任取两点，比较函数值</text>
+        </svg>
+      </div>
+      <figcaption>图 1："这一段在上升"的含义：在区间内<strong>任取</strong>两点 <span class="formula"><i>x</i><sub>1</sub>&lt;<i>x</i><sub>2</sub></span>，都有 <span class="formula"><i>f</i>(<i>x</i><sub>1</sub>)&lt;<i>f</i>(<i>x</i><sub>2</sub>)</span>。示意图仅辅助语言表述，教学含义以文字为准。</figcaption>
+    </figure>
+
+    <h3>第三步 · 过渡到记号（只说不证）</h3>
+    <p class="formula formula--block">在区间上，任取 <i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub>，比较 <i>f</i>(<i>x</i><sub>1</sub>) 与 <i>f</i>(<i>x</i><sub>2</sub>)。</p>
+    <p>本单元只要求学生<strong>会用这句话描述</strong>图像段，不要求证明；"如何对任意两点论证"留给 U2。</p>
+
+    <h3>可直接带走的引入活动（约 5 分钟）</h3>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th style="width:8em;">环节</th><th>教师行为</th><th>预期学生表现</th></tr></thead>
+        <tbody>
+          <tr><td>两组数比较</td><td>给出 10 时 / 14 时气温两个数，问怎么比较。</td><td>说出"比较两个数的大小"。</td></tr>
+          <tr><td>图像指认</td><td>出示上升图像段，让学生指出"升在哪里"。</td><td>能指出一段而非一个点。</td></tr>
+          <tr><td>比较两点</td><td>追问"你比较了哪两个点？只看端点够吗？"</td><td>出现分歧——引出"中间也要比"。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">3</span>为何这样讲</h2>
+    <ul>
+      <li><strong>从比较关系进入，而不是从"y 随 x 增大而增大"的口诀进入</strong>：比较关系是定义的核心动作，口诀是结论的压缩，跳过动作直接背结论，"任意"就没有生长点。</li>
+      <li><strong>"只看端点够吗"制造第一次认知冲突</strong>：端点值大 ⇏ 整段递增（反例在 U2 会展开），这个分歧让学生主动需要"任意两点"。</li>
+      <li><strong>记号只说不证</strong>：形式化证明放 U2，本单元保住直觉到结构的通道，避免引入过载。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">4</span>何时不适用</h2>
+    <ul>
+      <li><strong>学生还没掌握函数符号 <span class="formula"><i>f</i>(<i>x</i>)</span>：</strong>先用具体函数（气温、路程），不出现抽象记号。</li>
+      <li><strong>本单元不处理证明：</strong>若课堂目标就是形式定义与证明，直接进入 U2。</li>
+      <li><strong>不要求出现"任意"的正式量词表述：</strong>"任取两点"的口语版即可，量词的精确化留给定义课。</li>
+      <li><strong>图像不精确的情境（如手绘示意图）：</strong>判断必须回到数值比较，本单元活动需配真实或表格数据。</li>
+    </ul>
+  </section>
+
+  <section id="practice">
+    <h2><span class="h2-no">5</span>练习：判断 · 改写 · 迁移</h2>
+    <p class="dim" style="margin-bottom:16px;">可以先写初始思路再提交；查看参考分析不要求答对。回答保存在你的浏览器，可到<a href="../../records/" style="text-decoration:underline;">我的记录</a>查看。</p>
+
+    <div class="practice" data-practice data-unit="concept-intro" data-qid="q1">
+      <div class="practice__head">
+        <div><strong>练习 1 · 判断与说理</strong><span class="practice__kind"> · 判断题</span></div>
+        <span class="tag" data-state-badge>未回答</span>
+      </div>
+      <p class="practice__prompt">一位老师这样引入："同学们看，这个函数的图像一直在往上升，所以它是增函数。"这种引入的主要问题是什么？</p>
+      <div class="practice__answer">
+        <fieldset class="choice">
+          <label><input type="radio" name="u1q1" value="A">A．没有问题，图像直观，学生能懂</label>
+          <label><input type="radio" name="u1q1" value="B">B．直觉可以用作起点，但"一直在升"只是整体印象，需要过渡到区间上比较两点，否则学生把"看图"当判断工具</label>
+          <label><input type="radio" name="u1q1" value="C">C．问题在于应该先给代数定义，再谈图像</label>
+        </fieldset>
+        <label class="field"><span class="field__label">你的补充理由（必填其一）</span>
+          <textarea placeholder="结合你班上学生的实际表现说一说……"></textarea></label>
+        <div class="practice__actions">
+          <button type="button" class="btn btn--pill-sm" data-action="submit">提交回答</button>
+          <button type="button" class="btn btn--ghost-sm" data-action="view-ref">查看参考分析</button>
+          <span class="practice__saved"></span>
+        </div>
+      </div>
+      <div class="reference is-hidden">
+        <h4>参考分析 <span class="tag tag--plain">唯一参考，不是唯一标准</span></h4>
+        <p><strong>参考答案：B。</strong>图像直觉是好的引入起点，但"一直在往上升"是对图像的整体印象；若停留在看图，学生遇到不精确的手绘图像或抽象函数时就没有判断工具。教学中应把直觉用作引入，随即过渡到"在区间上任取两点、比较函数值"。</p>
+        <p>选 A 的风险：直观确认不等于数学判断。选 C 则走过头——引入阶段先于形式定义是合理的，问题不在顺序，而在是否搭建了"比较关系"这座桥。只要你的改写能把看图直觉接到比较关系上，就是合理的方案。</p>
+      </div>
+    </div>
+
+    <div class="practice" data-practice data-unit="concept-intro" data-qid="q2">
+      <div class="practice__head">
+        <div><strong>练习 2 · 改写引入活动</strong><span class="practice__kind"> · 改写题</span></div>
+        <span class="tag" data-state-badge>未回答</span>
+      </div>
+      <p class="practice__prompt">把"看图说话"改写成一段引入活动：写出你的<strong>两个提问</strong>，要求能让学生比较两个具体的自变量取值（情境自选）。</p>
+      <div class="practice__answer">
+        <label class="field"><span class="field__label">提问一（建立比较）</span>
+          <textarea placeholder="例如：10 时和 14 时哪个更热？你怎么比较的？"></textarea></label>
+        <label class="field"><span class="field__label">提问二（引出任意性）</span>
+          <textarea placeholder="例如：只比较这两个时刻，能说明整个下午都在升温吗？"></textarea></label>
+        <div class="practice__actions">
+          <button type="button" class="btn btn--pill-sm" data-action="submit">提交回答</button>
+          <button type="button" class="btn btn--ghost-sm" data-action="view-ref">查看参考分析</button>
+          <span class="practice__saved"></span>
+        </div>
+      </div>
+      <div class="reference is-hidden">
+        <h4>参考分析 <span class="tag tag--plain">开放题，以下是参考要点</span></h4>
+        <ul>
+          <li>好的引入提问通常是三步：给出<strong>具体数值或图像段</strong> → 要求<strong>比较</strong> → 追问"<strong>比较了哪两点</strong>"。</li>
+          <li>第二个提问的关键是制造分歧："只比较两个值 / 端点，够说明整段吗？"——让学生自己感到"还得比更多点"。</li>
+          <li>自查重点：你的提问是否给了学生可比较的具体对象；追问是否指向"任意"而不只是"更多例子"。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="practice" data-practice data-unit="concept-intro" data-qid="q3">
+      <div class="practice__head">
+        <div><strong>练习 3 · 新情境迁移</strong><span class="practice__kind"> · 独立保存</span></div>
+        <span class="tag" data-state-badge>未回答</span>
+      </div>
+      <p class="practice__prompt">若情境换成"手机电量随使用时间下降"（<strong>递减</strong>），三步引入中哪一步必须改、哪一步不变？写出你的理由。</p>
+      <div class="practice__answer">
+        <label class="field"><span class="field__label">你的迁移分析</span>
+          <textarea placeholder="逐步对照：两组数比较 / 图像段 / 任取两点记号……"></textarea></label>
+        <div class="practice__actions">
+          <button type="button" class="btn btn--pill-sm" data-action="submit">提交回答</button>
+          <button type="button" class="btn btn--ghost-sm" data-action="view-ref">查看参考分析</button>
+          <span class="practice__saved"></span>
+        </div>
+      </div>
+      <div class="reference is-hidden">
+        <h4>参考分析 <span class="tag tag--plain">参考要点</span></h4>
+        <p><strong>不变的是比较结构</strong>：在区间上任取 <span class="formula"><i>x</i><sub>1</sub>&lt;<i>x</i><sub>2</sub></span>，比较 <span class="formula"><i>f</i>(<i>x</i><sub>1</sub>)</span> 与 <span class="formula"><i>f</i>(<i>x</i><sub>2</sub>)</span>。<strong>必须改的是方向</strong>：方向词换成"下降"，不等号换成 <span class="formula"><i>f</i>(<i>x</i><sub>1</sub>)&gt;<i>f</i>(<i>x</i><sub>2</sub>)</span>。若你的回答只改了情境和方向词、却保留了"越往右越高"式的描述，说明迁移未完成。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">6</span>自查量规</h2>
+    <p class="dim" style="margin-bottom:14px;">对照下列四项打分（0＝缺失，1＝部分具备，2＝清楚且可执行）。量规分值只是本项目的评审工具，不是教师专业资质评价。</p>
+    <div class="rubric" data-rubric="concept-intro">
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>自查项</th><th style="width:190px;">评分</th></tr></thead>
+          <tbody>
+            <tr><td>数学表述正确：区间、比较方向、符号无误</td><td class="rubric-cell"><label><input type="radio" name="rub-ci-1" value="0">0</label><label><input type="radio" name="rub-ci-1" value="1">1</label><label><input type="radio" name="rub-ci-1" value="2">2</label></td></tr>
+            <tr><td>引入活动能从图像直觉过渡到区间上的比较关系</td><td class="rubric-cell"><label><input type="radio" name="rub-ci-2" value="0">0</label><label><input type="radio" name="rub-ci-2" value="1">1</label><label><input type="radio" name="rub-ci-2" value="2">2</label></td></tr>
+            <tr><td>预判了"看图代替比较"这一典型理解偏差</td><td class="rubric-cell"><label><input type="radio" name="rub-ci-3" value="0">0</label><label><input type="radio" name="rub-ci-3" value="1">1</label><label><input type="radio" name="rub-ci-3" value="2">2</label></td></tr>
+            <tr><td>设计了可操作的理解检查（如"只看端点够吗"）</td><td class="rubric-cell"><label><input type="radio" name="rub-ci-4" value="0">0</label><label><input type="radio" name="rub-ci-4" value="1">1</label><label><input type="radio" name="rub-ci-4" value="2">2</label></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <label class="rubric-veto"><input type="checkbox" data-role="veto">否决标记：我发现自己的表述存在数学错误（区间、方向、符号），需要先修正再进入改课。</label>
+      <p class="rubric-score" style="margin-top:8px;"><b>未评分</b> · 保存于本浏览器</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">7</span>完成练习，写下你的引入活动</h2>
+    <p>到工作台把这段引入改成你自己的教学片段：目标、问题链、预期错误、理解检查四项填完即可导出。</p>
+    <div class="practice__actions" style="margin-top:18px;">
+      <a class="btn btn--pill-deep" href="../../workspace/?unit=concept-intro&amp;new=1">进入工作台，写我的引入活动
+        <span class="btn__badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M6 4h6v6"/></svg></span>
+      </a>
+      <a class="btn btn--ghost" href="../definition-proof/">继续 U2 定义与证明</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="nav__logo" href="../../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+      <p>帮助个人高中数学教师，把一个教学难点转化为可复盘的课堂改进任务。暂用名，正式名称与域名待定。</p>
+    </div>
+    <div class="footer__links">
+      <a href="../../">首页</a>
+      <a href="../../topics/monotonicity/">单调性专题</a>
+      <a href="../../workspace/">工作台</a>
+      <a href="../../records/">我的记录</a>
+      <a href="../../about/">说明</a>
+    </div>
+  </div>
+  <div class="footer__note">
+    MT-MONO-U1 · v0.1.0 草稿（未复核）· 2026-10-02 · 练习与草稿仅保存在本浏览器 · 导出不等于已实际使用。
+  </div>
+</footer>
+
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>

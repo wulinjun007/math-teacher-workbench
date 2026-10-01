@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学教师成长工作台 · 把一个教学难点变成课堂改进任务</title>
+<meta name="description" content="面向个人高中数学教师的任务型专业成长工作台：围绕一个教学难点，提供短训示范、判断练习、教学片段编辑与课后复盘。首期专题：函数单调性。">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+
+<div class="notice">
+  <div class="notice__inner">
+    <span class="notice__dot"></span>
+    当前为交互原型（G1）：全部内容为 PRD 原创演示，<strong>未经专业教师复核</strong>，不可直接用于正式教学。
+    <a href="about/">审核说明与纠错入口</a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="./"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+    <nav class="nav__menu" aria-label="主导航">
+      <a class="nav__link is-active" href="./">首页</a>
+      <a class="nav__link" href="topics/monotonicity/">专题 · 单调性</a>
+      <a class="nav__link" href="workspace/">工作台</a>
+      <a class="nav__link" href="records/">我的记录</a>
+      <a class="nav__link" href="about/">说明</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--pill-dark" href="topics/monotonicity/">开始使用</a>
+      <button class="nav__burger" aria-expanded="false" aria-label="打开菜单"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <p class="hero__eyebrow">教师自助短训 · 无需注册 · 内容只保存在你自己的浏览器</p>
+  <h1 class="hero__title">把一个教学难点，变成学得会、改得动、<br>用得上、能复盘的课堂改进任务</h1>
+  <p class="hero__sub">面向个人高中数学教师的任务型专业成长工作台。不做题库，不做网课：每一站都围绕"你下周要讲的那节课"，以练习和产物收尾。首期专题：函数单调性。</p>
+  <div class="hero__cta">
+    <a class="btn btn--pill-deep" href="topics/monotonicity/">开始一次教学改进
+      <span class="btn__badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M6 4h6v6"/></svg></span>
+    </a>
+    <a class="btn btn--ghost" href="#sample">先看一个样例</a>
+  </div>
+</section>
+
+<div class="chain" aria-label="核心闭环">
+  <span class="chain__step"><b>①</b> 选择困难</span><span class="chain__arrow">→</span>
+  <span class="chain__step"><b>②</b> 学习示范</span><span class="chain__arrow">→</span>
+  <span class="chain__step"><b>③</b> 完成练习</span><span class="chain__arrow">→</span>
+  <span class="chain__step"><b>④</b> 修改教学方案</span><span class="chain__arrow">→</span>
+  <span class="chain__step chain__step--mark"><b>⑤</b> 导出使用</span><span class="chain__arrow">→</span>
+  <span class="chain__step"><b>⑥</b> 课后复盘</span>
+</div>
+
+<section class="section container" id="sample">
+  <span class="eyebrow">样例 · 函数单调性专题</span>
+  <h2 class="section-title">两次选择，进入一个具体困难</h2>
+  <p class="section-sub">下面是真实工作台的样子：左侧选困难，右侧是给老师的示范与练习。点击左侧单元试试。</p>
+
+  <div class="shell">
+    <div class="shell__side">
+      <div class="shell__side-head">函数单调性 · 三个训练单元</div>
+      <ul class="sessions" id="shell-sessions">
+        <li><button type="button" class="session" data-tpl="u1">
+          <span class="session__avatar session__avatar--olive">U1</span>
+          <span class="session__meta"><span class="session__name">概念引入</span><span class="session__preview">由图像直觉过渡到区间上的比较关系</span></span>
+          <span class="session__aside"><span class="session__time">带走向导</span></span>
+        </button></li>
+        <li><button type="button" class="session" data-tpl="u2">
+          <span class="session__avatar">U2</span>
+          <span class="session__meta"><span class="session__name">定义与证明</span><span class="session__preview">区分"举例"与"对任意两点的论证"</span></span>
+          <span class="session__aside"><span class="session__time">带走问题链</span></span>
+        </button></li>
+        <li><button type="button" class="session" data-tpl="u3">
+          <span class="session__avatar session__avatar--deep">U3</span>
+          <span class="session__meta"><span class="session__name">错误诊断</span><span class="session__preview">漏区间 / 量词缺失 / 特例代证明</span></span>
+          <span class="session__aside"><span class="session__time">带走诊断卡</span></span>
+        </button></li>
+      </ul>
+      <div class="shell__side-foot"><span class="status-dot"></span>内容 v0.1.0 · 草稿 · 未复核</div>
+    </div>
+    <div class="shell__main">
+      <div class="shell__head">
+        <span class="shell__title" id="shell-title">概念引入</span>
+        <span class="shell__head-meta">示范 · 练习 · 参考分析 · 自查量规</span>
+      </div>
+      <div class="chat" id="shell-chat" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div id="shell-templates" class="is-hidden">
+    <div class="shell-tpl" data-tpl="u1">
+      <div class="msg msg--user"><div class="prose">我让学生看图说"哪个函数在增长"，他们都能说对；可一问"你是怎么知道的"，就只会指着图说"它一直在升"。</div></div>
+      <div class="msg msg--agent"><div class="prose">
+        <div class="prose__lead">引入活动 · 从比较两点开始（节选）</div>
+        <div class="prose__meta">U1 概念引入 · 练习前的示范</div>
+        <ul>
+          <li>给出一段图像，先问：<strong>"比较哪两个点，能支持'这段在上升'？"</strong></li>
+          <li>再追问：<strong>"只比较左右端点，够说明整段吗？"</strong></li>
+          <li>最后过渡到记号：在区间上，任取 <span class="formula"><i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub></span>，比较 <span class="formula"><i>f</i>(<i>x</i><sub>1</sub>)</span> 与 <span class="formula"><i>f</i>(<i>x</i><sub>2</sub>)</span>。</li>
+        </ul>
+        <span class="prose__chain">看图直觉 → 比较两点 → 区间记号</span>
+        <div class="prose__note">完整单元含：先备条件 · 可观察目标 · 何时不适用 · 2 道练习 + 参考分析 + 自查量规。</div>
+      </div></div>
+    </div>
+    <div class="shell-tpl" data-tpl="u2">
+      <div class="msg msg--user"><div class="prose">讲单调性定义时，我举了 <span class="formula"><i>f</i>(1)=1</span>、<span class="formula"><i>f</i>(2)=4</span>，学生点头说懂了。这算讲清楚了吗？</div></div>
+      <div class="msg msg--agent"><div class="prose">
+        <div class="prose__lead">判断练习 · U2 定义与证明</div>
+        <div class="prose__meta">题干 · 先写下你的判断，再看参考分析</div>
+        <p>"因为 <span class="formula"><i>f</i>(1)=1</span>、<span class="formula"><i>f</i>(2)=4</span>，所以 <span class="formula"><i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup></span> 在 [0,2] 上严格递增。"<br>结论是否正确？这段理由是否充分？</p>
+        <span class="prose__chain">示范问题链：观察 → 明确条件 → 比较函数值 → 说明理由 → 回到定义</span>
+        <div class="prose__note">参考分析区分"支持猜想的例子"与"覆盖任意两点的论证"；改写练习把"你听懂了吗"换成能检查"任意"含义的问题。</div>
+      </div></div>
+    </div>
+    <div class="shell-tpl" data-tpl="u3">
+      <div class="msg msg--user"><div class="prose">作业里总有两类错：写"<span class="formula"><i>x</i></span> 越大 <span class="formula"><i>y</i></span> 越大"漏掉范围；或者拿 <span class="formula"><i>f</i>(1)&lt;<i>f</i>(3)</span> 当证明。批改只能打叉，有没有更好的回应方式？</div></div>
+      <div class="msg msg--agent"><div class="prose">
+        <div class="prose__lead">错误—追问—修正卡（节选）</div>
+        <div class="prose__meta">U3 错误诊断 · 三类典型错误</div>
+        <ul>
+          <li><strong>量词不完整：</strong>"<span class="formula"><i>x</i></span> 越大 <span class="formula"><i>y</i></span> 越大" → 追问："任取两点，在同一个区间里怎么比较？"</li>
+          <li><strong>特例代证明：</strong><span class="formula"><i>f</i>(1)&lt;<i>f</i>(3)</span> → 追问："1 和 3 能代表所有点吗？再取 2 试试？"</li>
+        </ul>
+        <span class="prose__chain">识别错误 → 写一条追问 → 给出学生可执行的修正</span>
+        <div class="prose__note">完整单元含：遗漏区间的诊断（含 <span class="formula">1/<i>x</i></span> 并集反例）· 改写练习 · 新情境迁移。</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="eyebrow">适用人群</span>
+  <h2 class="section-title">这份工作台适合谁</h2>
+  <p class="section-sub">首版只服务"想改进自己课堂"的数学教师个人；不面向学生，不做机构管理。</p>
+  <div class="grid grid--4">
+    <div class="card">
+      <div class="card__top"><span class="card__icon card__icon--deep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></span></div>
+      <h3>新任 / 首次教高一</h3>
+      <p>从"自己会解题"过渡到"能解释定义、组织提问、观察学生理解"。</p>
+      <div class="card__foot"><span class="tag tag--mark">主要试用对象</span></div>
+    </div>
+    <div class="card">
+      <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4L8 20l-5 1 1-5L17 3z"/></svg></span></div>
+      <h3>有经验、正在改课</h3>
+      <p>围绕一个教学卡点，快速比较讲法、修改问题链，拿到可对照的量规。</p>
+      <div class="card__foot"><span class="tag tag--active">补充样本</span></div>
+    </div>
+    <div class="card">
+      <div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 15h4"/></svg></span></div>
+      <h3>准备公开课 / 说课</h3>
+      <p>需要完整说课材料与展示包装——将在后续版本验证，不进首版。</p>
+      <div class="card__foot"><span class="tag">后续验证</span></div>
+    </div>
+    <div class="card">
+      <div class="card__top"><span class="card__icon card__icon--olive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span></div>
+      <h3>高三复习 / 竞赛</h3>
+      <p>复杂专题、命题与高阶解题训练不在首版范围内，敬请期待后续专题。</p>
+      <div class="card__foot"><span class="tag tag--draft">暂不覆盖</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="eyebrow">首版范围</span>
+  <h2 class="section-title">首版只做六件事</h2>
+  <p class="section-sub">AI 辅助、账号云同步、支付、视频课都不在这版。每一项能力都以"教师产物"为完成依据，而非播放时长或打卡。</p>
+  <div class="grid grid--3">
+    <div class="card"><div class="card__top"><span class="card__icon card__icon--deep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg></span><span class="card__code">F01</span></div><h3>选择教学困难</h3><p>仅开放"函数单调性"专题：概念引入、定义与证明、错误诊断三个入口，两次选择内进入单元。</p></div>
+    <div class="card"><div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 20h9M16.5 3.5l4 4L7 21H3v-4L16.5 3.5z"/></svg></span><span class="card__code">F02</span></div><h3>短训与分步示范</h3><p>每单元：教学困难 → 先备条件 → 可观察目标 → 示范讲法 → 为何这样讲 → 何时不适用。</p></div>
+    <div class="card"><div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 9.5c.5-1.2 1.6-2 3-2 1.8 0 3 1.1 3 2.5 0 2.5-3 2-3 4"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg></span><span class="card__code">F03</span></div><h3>教学判断练习</h3><p>判断 / 改写 / 迁移三型练习，配审核过的参考分析与任务级自查量规；四种作答状态可区分。</p></div>
+    <div class="card"><div class="card__top"><span class="card__icon card__icon--olive"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h6M7 13h10M7 17h4"/></svg></span><span class="card__code">F04</span></div><h3>教学片段编辑</h3><p>目标、问题链、预期错误、理解检查四项核心字段；本地自动保存、复制为新版本、恢复备份。</p></div>
+    <div class="card"><div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></span><span class="card__code">F05</span></div><h3>预览与导出</h3><p>打印 / 另存 PDF、复制文本、Markdown 与可恢复 JSON 备份；导出稿标注"个人改编稿"。</p></div>
+    <div class="card"><div class="card__top"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-9-9"/><path d="M21 3l-9 9"/><path d="M15 3h6v6"/></svg></span><span class="card__code">F06</span></div><h3>使用记录与复盘</h3><p>区分"计划使用 / 已实际使用 / 未使用"，复盘三项：观察到什么、我的解释、下次改什么。</p></div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="eyebrow">信任与边界</span>
+  <h2 class="section-title">专业审核说明与首版边界</h2>
+  <p class="section-sub">内容审核是业务依赖，不是上线后的补充工作——本原型如实标注当前状态。</p>
+  <div class="grid grid--2">
+    <div class="card card--hover">
+      <h3>内容审核 · 当前状态</h3>
+      <p style="margin-bottom:14px;">所有单元按同一流程发布；<strong>本原型内容尚未走完该流程</strong>，因此全部标注为草稿。</p>
+      <div class="chain" style="padding:0 0 14px;justify-content:flex-start;">
+        <span class="chain__step">内容教师编写</span><span class="chain__arrow">→</span>
+        <span class="chain__step">复核数学</span><span class="chain__arrow">→</span>
+        <span class="chain__step">复核教学</span><span class="chain__arrow">→</span>
+        <span class="chain__step">发布冻结版本</span>
+      </div>
+      <div class="callout callout--warn">
+        <span class="callout__lead">当前：v0.1.0 草稿 · 未复核。</span>
+        内容编号 MT-MONO-U1 ~ U3（2026-10-02 更新）；课标 2025 修订版存在已核验，逐条教材映射未核对，标记"教材未映射"。
+      </div>
+      <div class="card__foot"><a class="btn btn--ghost-sm" href="about/#errata">提交纠错</a><a class="btn btn--ghost-sm" href="privacy/">数据边界</a></div>
+    </div>
+    <div class="card card--hover">
+      <h3>首版明确不做</h3>
+      <ul style="font-size:14px;color:var(--lv-ink-2);line-height:2;">
+        <li>不面向学生提供课程；不做班级、成绩、作业批改。</li>
+        <li>不做账号与云同步——内容只存你的浏览器，可导出备份。</li>
+        <li>不做 AI 自动评分——反馈来自审核过的参考分析与量规。</li>
+        <li>不承诺学生提分、教师职称晋升或官方认证。</li>
+        <li>不默认覆盖整个高中——先验证一个专题是否够用。</li>
+        <li>不做付费内容鉴权——首版公开站不涉及支付。</li>
+      </ul>
+      <div class="card__foot"><span class="tag tag--draft">原型阶段 G1</span><span class="tag tag--plain">验证后再扩</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>从最难讲的那节课开始</h2>
+  <p>不注册、不打卡：完成一次"学习 → 练习 → 改课 → 复盘"，只需要一杯咖啡的时间。</p>
+  <div class="cta__row">
+    <a class="btn btn--pill-deep" href="topics/monotonicity/">开始一次教学改进
+      <span class="btn__badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M6 4h6v6"/></svg></span>
+    </a>
+    <a class="btn btn--ghost" href="about/">先读产品说明</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="nav__logo" href="./"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+      <p>帮助个人高中数学教师，把一个教学难点转化为可复盘的课堂改进任务。暂用名，正式名称与域名待定。</p>
+    </div>
+    <div class="footer__links">
+      <a href="topics/monotonicity/">单调性专题</a>
+      <a href="workspace/">工作台</a>
+      <a href="records/">我的记录</a>
+      <a href="about/">说明</a>
+      <a href="privacy/">隐私与数据</a>
+    </div>
+  </div>
+  <div class="footer__note">
+    交互原型 G1 · 内容为 PRD 原创演示，未经专业教师复核，不可直接用于正式教学 · 数据仅保存在本浏览器，请定期导出备份 · 不收集学生个人信息。
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

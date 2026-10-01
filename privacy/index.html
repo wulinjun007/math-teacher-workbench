@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私与数据边界 · 数学教师成长工作台</title>
+<meta name="description" content="本地存储说明、数据边界、备份与清除、服务日志与未来人工智能边界。">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="privacy">
+
+<div class="notice">
+  <div class="notice__inner">
+    <span class="notice__dot"></span>
+    本站无账号系统：你的草稿与练习只保存在<strong>本浏览器</strong>，请定期导出备份。
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+    <nav class="nav__menu" aria-label="主导航">
+      <a class="nav__link" href="../">首页</a>
+      <a class="nav__link" href="../topics/monotonicity/">专题 · 单调性</a>
+      <a class="nav__link" href="../workspace/">工作台</a>
+      <a class="nav__link" href="../records/">我的记录</a>
+      <a class="nav__link" href="../about/">说明</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--pill-dark" href="../records/">管理我的数据</a>
+      <button class="nav__burger" aria-expanded="false" aria-label="打开菜单"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="pagehead" style="padding-bottom:0;">
+  <p class="pagehead__eyebrow">隐私与数据</p>
+  <h1 class="pagehead__title">数据边界：清楚、诚实、可带走</h1>
+</section>
+
+<div class="article">
+
+  <section>
+    <h2><span class="h2-no">1</span>数据存在哪里</h2>
+    <p>你的练习回答、教学草稿、使用与复盘记录，全部保存在<strong>你当前使用的浏览器本地存储</strong>（localStorage）中。本站没有账号系统，不做云端同步。</p>
+    <ul>
+      <li>本地存储按"来源"隔离：换一个浏览器、换一台设备，都看不到这些记录。</li>
+      <li>浏览器策略可能禁用或清除本地存储（如无痕模式、清理站点数据）；一旦清除，记录<strong>不可恢复</strong>。</li>
+      <li>因此请在<a href="../records/" style="text-decoration:underline;">我的记录</a>中定期「导出全部数据」，获得一个包含 schema_version 的 JSON 备份文件；导入时一律复制为新编号，不会覆盖现有内容。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">2</span>我们不收集什么</h2>
+    <ul>
+      <li><strong>学生个人信息：</strong>全站不设学生姓名、学校班级名单、联系方式、学生成绩或教师绩效字段。练习中明确要求匿名描述课堂情况。</li>
+      <li><strong>注册身份：</strong>无注册、无登录、无手机号 / 邮箱必填项。</li>
+      <li><strong>隐藏远程分析：</strong>站内没有隐藏的远程上报。可在「我的记录」查看本机匿名任务事件的完整清单（仅事件名 / 任务编号 / 时间，不含自由文本），默认不上传，仅在你同意后导出。</li>
+    </ul>
+    <div class="callout">
+      <span class="callout__lead">诚实说明：</span>网站访问仍可能产生服务器运行日志（这是任何公开网站的常态），我们不能宣称"服务器完全不产生数据"；首版也不做任何基于日志的用户画像。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">3</span>输入与内容安全</h2>
+    <ul>
+      <li>你输入的自由文本<strong>不公开、不执行</strong>：站内按纯文本渲染，不解析 HTML；导入备份时做格式与大小校验。</li>
+      <li>本站为公开静态网站，页面内容（示范、练习、参考分析）本身可以被任何人查看或下载——我们不依赖"前端隐藏"实现任何访问控制。</li>
+      <li>删除自由：你可以在「我的记录」中删除单份草稿或一键清除全部本地记录（两步确认，删除前建议先导出）。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">4</span>未来的人工智能边界</h2>
+    <p>首版不含 AI 功能。未来若引入生成式辅助（如问题链建议），将遵循：仅基于已审核内容给建议；明确引用、适用条件与不确定性；保留你的原文、逐项选择采纳；无依据时拒绝下结论；模型密钥只放服务端。届时生成内容将按规定添加显式标识。以上是设计承诺，不是当前已实现的功能。</p>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">5</span>公开上线前的核对</h2>
+    <p class="dim">正式运营前需完成：部署与备案要求核对、隐私条款与实际行为一致性检查、内容授权核查，以及（若接入生成式服务）生成内容显式 / 隐式标识义务的逐项审查。当前原型阶段不涉及上述商业化处理。</p>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="nav__logo" href="../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+      <p>帮助个人高中数学教师，把一个教学难点转化为可复盘的课堂改进任务。暂用名，正式名称与域名待定。</p>
+    </div>
+    <div class="footer__links">
+      <a href="../">首页</a>
+      <a href="../topics/monotonicity/">单调性专题</a>
+      <a href="../workspace/">工作台</a>
+      <a href="../records/">我的记录</a>
+      <a href="../about/">说明</a>
+    </div>
+  </div>
+  <div class="footer__note">
+    隐私页面与实际行为保持一致：无账号、无隐藏上报、数据可导出可删除 · 发现不一致请到「说明 · 纠错入口」反馈。
+  </div>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

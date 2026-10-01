@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U2 定义与证明 · 函数单调性 · 数学教师成长工作台</title>
+<meta name="description" content="区分举例、直观说明与对任意两点的证明；带走一组带追问的问题链。">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body data-page="learn" data-unit="definition-proof">
+
+<div class="notice">
+  <div class="notice__inner">
+    <span class="notice__dot"></span>
+    当前为交互原型（G1）：全部内容为 PRD 原创演示，<strong>未经专业教师复核</strong>，不可直接用于正式教学。
+    <a href="../../about/">审核说明与纠错入口</a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="../../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+    <nav class="nav__menu" aria-label="主导航">
+      <a class="nav__link" href="../../">首页</a>
+      <a class="nav__link is-active" href="../../topics/monotonicity/">专题 · 单调性</a>
+      <a class="nav__link" href="../../workspace/">工作台</a>
+      <a class="nav__link" href="../../records/">我的记录</a>
+      <a class="nav__link" href="../../about/">说明</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--pill-dark" href="#practice">做练习</a>
+      <button class="nav__burger" aria-expanded="false" aria-label="打开菜单"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="pagehead">
+  <p class="pagehead__eyebrow">函数单调性 · 单元 U2 / 3 · 内容编号 MT-MONO-U2</p>
+  <h1 class="pagehead__title">定义与证明：把"任意"落到操作上</h1>
+  <div class="pagehead__tags">
+    <span class="tag tag--draft">v0.1.0 草稿 · 未复核</span>
+    <span class="tag">教材未映射</span>
+    <span class="tag">先修 U1 更佳</span>
+    <span class="tag tag--plain">更新 2026-10-02</span>
+  </div>
+</section>
+
+<div class="article">
+
+  <section>
+    <h2><span class="h2-no">1</span>教学困难与先备条件</h2>
+    <p><strong>教学困难：</strong>学生会代入具体值判断函数升降，却说不清定义中"任意两个自变量"的含义；常见表现是把两个数值例子当成证明，或者背下"y 随 x 增大而增大"却不会使用。</p>
+    <div class="infobox">
+      <p><strong>先备条件（学生侧）：</strong>函数符号 <span class="formula"><i>f</i>(<i>x</i>)</span> 与区间记号；作差与因式分解；不等式的基本性质。<strong>（学生）尚未学习导数——本单元全部论证不用导数。</strong></p>
+      <p><strong>先备条件（教师侧）：</strong>完成过 U1 或熟悉"区间上的比较关系"的引入方式。</p>
+    </div>
+    <div class="callout">
+      <span class="callout__lead">本单元的可观察目标：</span>学生能解释"为什么 <span class="formula"><i>f</i>(1)=1</span>、<span class="formula"><i>f</i>(2)=4</span> 这类两个例子不能完成证明"，并在 [0,2] 上对 <span class="formula"><i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup></span> 完成"任取两点"的比较论证。
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">2</span>示范讲法</h2>
+    <h3>第一步 · 用一道判断题暴露直觉</h3>
+    <p>直接给出下面这句话，让学生先表态，再说明理由：</p>
+    <p class="formula formula--block">因为 <i>f</i>(1)=1、<i>f</i>(2)=4，所以 <i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup> 在 [0,2] 上严格递增。</p>
+    <p>学生几乎都会同意"结论正确"。这时追问：<strong>"同意结论的同学，这段理由说服你了吗？为什么？"</strong>——把矛盾停在"结论对"与"理由薄"之间，定义的必要性才出现。</p>
+
+    <h3>第二步 · 五步问题链（约 10 分钟）</h3>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th style="width:6em;">步骤</th><th>教师提问</th><th>希望学生说出的内容</th></tr></thead>
+        <tbody>
+          <tr><td>观察</td><td><span class="formula"><i>x</i><sup>2</sup></span> 在 [-2,2] 上都是越往右越高吗？</td><td>不是；要区分不同区间。</td></tr>
+          <tr><td>明确条件</td><td>讨论 [0,2] 上的严格递增，需要比较哪两个点？</td><td>任取 <span class="formula">0 ≤ <i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub> ≤ 2</span>。</td></tr>
+          <tr><td>比较函数值</td><td><span class="formula"><i>f</i>(<i>x</i><sub>2</sub>)−<i>f</i>(<i>x</i><sub>1</sub>)</span> 可以怎样改写？</td><td><span class="formula"><i>x</i><sub>2</sub><sup>2</sup>−<i>x</i><sub>1</sub><sup>2</sup>=(<i>x</i><sub>2</sub>−<i>x</i><sub>1</sub>)(<i>x</i><sub>2</sub>+<i>x</i><sub>1</sub>)</span>。</td></tr>
+          <tr><td>说明理由</td><td>为什么这个乘积大于 0？</td><td><span class="formula"><i>x</i><sub>2</sub>−<i>x</i><sub>1</sub>&gt;0</span>，且 <span class="formula"><i>x</i><sub>2</sub>+<i>x</i><sub>1</sub>&gt;0</span>。</td></tr>
+          <tr><td>回到定义</td><td>这与只代入 1 和 2 有什么不同？</td><td>论证覆盖区间内<strong>任意</strong>满足条件的两点。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="figure">
+      <div class="figure__canvas">
+        <svg viewBox="0 0 560 300" role="img" aria-label="示意图：x²在区间[-2,2]上并非处处上升，讨论递增必须先说明区间">
+          <line x1="280" y1="18" x2="280" y2="282" stroke="rgba(44,42,46,.25)" stroke-width="1"/>
+          <line x1="30" y1="270" x2="530" y2="270" stroke="rgba(44,42,46,.25)" stroke-width="1"/>
+          <path d="M80,40 Q280,500 480,40" fill="none" stroke="#211a2a" stroke-width="2.5"/>
+          <path d="M280,270 Q380,230 480,40" fill="none" stroke="#1c2415" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="356" cy="180" r="5" fill="#1c2415"/>
+          <circle cx="428" cy="86" r="5" fill="#1c2415"/>
+          <line x1="356" y1="180" x2="356" y2="270" stroke="rgba(44,42,46,.35)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="428" y1="86" x2="428" y2="270" stroke="rgba(44,42,46,.35)" stroke-width="1" stroke-dasharray="4 4"/>
+          <text x="342" y="288" font-size="13" font-style="italic" font-family="Georgia, serif" fill="#2c2a2e">x₁</text>
+          <text x="422" y="288" font-size="13" font-style="italic" font-family="Georgia, serif" fill="#2c2a2e">x₂</text>
+          <text x="290" y="30" font-size="12" fill="rgba(44,42,46,.62)">[-2,2] 上并非处处上升</text>
+          <text x="372" y="60" font-size="12" fill="#1c2415">[0,2]：任取两点比较</text>
+        </svg>
+      </div>
+      <figcaption>图 1：<span class="formula"><i>x</i><sup>2</sup></span> 在 [-2,2] 整体并非"越往右越高"；绿色段才是 [0,2]。"递增"必须先说清区间，再对区间内<strong>任意</strong>两点论证。教学中若不便作图，用文字说明同样成立。</figcaption>
+    </figure>
+
+    <h3>第三步 · 板书收敛为一句论证</h3>
+    <p class="formula formula--block">任取 0 ≤ <i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub> ≤ 2，则 <i>f</i>(<i>x</i><sub>2</sub>)−<i>f</i>(<i>x</i><sub>1</sub>) = (<i>x</i><sub>2</sub>−<i>x</i><sub>1</sub>)(<i>x</i><sub>2</sub>+<i>x</i><sub>1</sub>) &gt; 0，故 <i>f</i>(<i>x</i><sub>2</sub>) &gt; <i>f</i>(<i>x</i><sub>1</sub>)。</p>
+    <p>两个因子分别在区间条件下定号：<span class="formula"><i>x</i><sub>2</sub>−<i>x</i><sub>1</sub>&gt;0</span> 来自"任取"的排序，<span class="formula"><i>x</i><sub>2</sub>+<i>x</i><sub>1</sub>&gt;0</span> 来自区间 [0,2] 本身。<strong>条件的每一项都要有出处</strong>——这正是"任意"的操作化。</p>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">3</span>为何这样讲</h2>
+    <ul>
+      <li><strong>"任意"从矛盾中生长，而不是从背诵中生长。</strong>先用两个例子制造"结论对但理由薄"的缺口，学生对量词的需求才真实。</li>
+      <li><strong>因式分解让符号判断变成两个因子的分别定号</strong>，每一步都有区间条件支撑，为后续 <span class="formula">[−2,0]</span> 等变式留下接口。</li>
+      <li><strong>问题链的每一步都预期学生回应</strong>，教师可以按回应决定追问，而不是按教案顺序推进。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">4</span>何时不适用</h2>
+    <ul>
+      <li><strong>区间换成 [−2,0]：</strong><span class="formula"><i>x</i><sub>2</sub>+<i>x</i><sub>1</sub>&gt;0</span> 不再成立（此时 <span class="formula"><i>x</i><sup>2</sup></span> 递减），不能照搬第 4 步理由。</li>
+      <li><strong>学生尚未学函数符号：</strong>先用具体函数与数值比较，不要先上抽象定义。</li>
+      <li><strong>不引入导数：</strong>"导数非负 ⟹ 递增"是后续工具，本单元目标是定义与代数论证。</li>
+      <li><strong>跨区间（并集）结论要谨慎：</strong>见下方选读拓展。</li>
+    </ul>
+    <div class="callout">
+      <span class="callout__lead">选读拓展 · 用于内容边界核查：</span><span class="formula"><i>g</i>(<i>x</i>)=1/<i>x</i></span> 在 <span class="formula">(−∞,0)</span> 和 <span class="formula">(0,+∞)</span> 上分别严格递减，但<strong>不能</strong>据此说它在这两个区间的并集上严格递减——取 <span class="formula">−1 &lt; 1</span>，函数值为 <span class="formula"><i>g</i>(−1)=−1 &lt; 1=<i>g</i>(1)</span>，即被反驳。分段递减 ⇏ 并集递减。
+    </div>
+  </section>
+
+  <section id="practice">
+    <h2><span class="h2-no">5</span>练习：判断 · 改写 · 迁移</h2>
+    <p class="dim" style="margin-bottom:16px;">可以先写初始思路再提交；查看参考分析不要求答对。回答保存在你的浏览器，可到<a href="../../records/" style="text-decoration:underline;">我的记录</a>查看。</p>
+
+    <div class="practice" data-practice data-unit="definition-proof" data-qid="q1">
+      <div class="practice__head">
+        <div><strong>练习 1 · 判断与说理</strong><span class="practice__kind"> · 判断题</span></div>
+        <span class="tag" data-state-badge>未回答</span>
+      </div>
+      <p class="practice__prompt">某讲法："因为 <span class="formula"><i>f</i>(1)=1</span>、<span class="formula"><i>f</i>(2)=4</span>，所以 <span class="formula"><i>f</i>(<i>x</i>)=<i>x</i><sup>2</sup></span> 在 [0,2] 上严格递增。"请判断：</p>
+      <div class="practice__answer">
+        <fieldset class="choice">
+          <label><input type="radio" name="u2q1" value="A">A．结论正确，理由也充分</label>
+          <label><input type="radio" name="u2q1" value="B">B．结论正确，但理由不充分</label>
+          <label><input type="radio" name="u2q1" value="C">C．结论不正确</label>
+        </fieldset>
+        <label class="field"><span class="field__label">你的理由（必填其一）</span>
+          <textarea placeholder="例如：你打算在课堂上如何回应选 A 的学生？"></textarea></label>
+        <div class="practice__actions">
+          <button type="button" class="btn btn--pill-sm" data-action="submit">提交回答</button>
+          <button type="button" class="btn btn--ghost-sm" data-action="view-ref">查看参考分析</button>
+          <span class="practice__saved"></span>
+        </div>
+      </div>
+      <div class="reference is-hidden">
+        <h4>参考分析 <span class="tag tag--plain">唯一参考，不是唯一标准</span></h4>
+        <p><strong>参考答案：B。</strong>结论正确，但只比较 1 和 2 这两个值，不能完成对整个区间的证明。教学中需要区分"<strong>支持猜想的例子</strong>"和"<strong>覆盖任意两点的论证</strong>"：例子可以引发猜想、支持教学引入，但论证必须对区间内任意满足 <span class="formula">0 ≤ <i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub> ≤ 2</span> 的两点成立。</p>
+        <p>若你选了 A：想一想，把 1、2 换成 1.1、1.9，"理由"变了吗？若选了 C：注意 <span class="formula"><i>x</i><sup>2</sup></span> 在 [0,2] 上确实严格递增，问题出在理由而非结论。这是数学推理的判断，不是对课堂出现频率的统计。</p>
+      </div>
+    </div>
+
+    <div class="practice" data-practice data-unit="definition-proof" data-qid="q2">
+      <div class="practice__head">
+        <div><strong>练习 2 · 改写提问</strong><span class="practice__kind"> · 改写题</span></div>
+        <span class="tag" data-state-badge>未回答</span>
+      </div>
+      <p class="practice__prompt">请把"<strong>你听懂了吗</strong>"改写为一道能检查"任意"含义的问题，并写出学生可能的回答与你的追问。</p>
+      <div class="practice__answer">
+        <label class="field"><span class="field__label">你的检查问题</span>
+          <textarea placeholder="例如：只验证 f(1)＜f(2)，能不能断定整个区间上递增？为什么？"></textarea></label>
+        <label class="field"><span class="field__label">学生可能的回答</span>
+          <textarea placeholder="例如：再试几个点……（写出你班上最可能出现的两类回答）"></textarea></label>
+        <label class="field"><span class="field__label">你的追问</span>
+          <textarea placeholder="例如：试到几个才够？怎样选点，让别人无法反驳？"></textarea></label>
+        <div class="practice__actions">
+          <button type="button" class="btn btn--pill-sm" data-action="submit">提交回答</button>
+          <button type="button" class="btn btn--ghost-sm" data-action="view-ref">查看参考分析</button>
+          <span class="practice__saved"></span>
+        </div>
+      </div>
+      <div class="reference is-hidden">
+        <h4>参考分析 <span class="tag tag--plain">开放题，以下是参考要点</span></h4>
+        <ul>
+          <li>能检查"任意"的问题，通常迫使学生对<strong>选点方式</strong>而非<strong>选点结果</strong>表态："怎样选点，让别人无法反驳？"</li>
+          <li>若学生答"多试几个"，可追问"几个才够？"——把对话引到"任意"与"有限个例子"的差别。</li>
+          <li>自查重点：追问能否暴露量词误解；是否同时关注条件（区间）与理由（符号）。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="practice" data-practice data-unit="definition-proof" data-qid="q3">
+      <div class="practice__head">
+        <div><strong>练习 3 · 新情境迁移</strong><span class="practice__kind"> · 独立保存</span></div>
+        <span class="tag" data-state-badge>未回答</span>
+      </div>
+      <p class="practice__prompt">把方法迁移到 <span class="formula"><i>g</i>(<i>x</i>)=<i>x</i><sup>2</sup>+1</span> 在 [0,2] 上的讨论：哪一步证明发生变化？哪个结论不变？写出你的比较过程。</p>
+      <div class="practice__answer">
+        <label class="field"><span class="field__label">你的迁移分析</span>
+          <textarea placeholder="写出 g(x₂)−g(x₁) 的改写、符号理由，并指出与 x² 的差别……"></textarea></label>
+        <div class="practice__actions">
+          <button type="button" class="btn btn--pill-sm" data-action="submit">提交回答</button>
+          <button type="button" class="btn btn--ghost-sm" data-action="view-ref">查看参考分析</button>
+          <span class="practice__saved"></span>
+        </div>
+      </div>
+      <div class="reference is-hidden">
+        <h4>参考分析 <span class="tag tag--plain">参考要点</span></h4>
+        <p><span class="formula"><i>g</i>(<i>x</i><sub>2</sub>)−<i>g</i>(<i>x</i><sub>1</sub>)=<i>x</i><sub>2</sub><sup>2</sup>−<i>x</i><sub>1</sub><sup>2</sup></span>——差值中的常数 +1 相消，两因子定号与 <span class="formula"><i>x</i><sup>2</sup></span> 完全相同；<strong>不变的</strong>是两点条件与符号理由，<strong>变化的</strong>只是解析式。若你的回答没有写出 <span class="formula">0 ≤ <i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub> ≤ 2</span>，说明迁移中丢掉了定义的核心条件。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">6</span>自查量规</h2>
+    <p class="dim" style="margin-bottom:14px;">对照下列四项，为自己的回答与教学片段打分（0＝缺失，1＝部分具备，2＝清楚且可执行）。量规分值只是本项目的评审工具，不是教师专业资质评价。</p>
+    <div class="rubric" data-rubric="definition-proof">
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>自查项</th><th style="width:190px;">评分</th></tr></thead>
+          <tbody>
+            <tr><td>是否写清区间（所有比较都落在同一区间内）</td><td class="rubric-cell"><label><input type="radio" name="rub-dp-1" value="0">0</label><label><input type="radio" name="rub-dp-1" value="1">1</label><label><input type="radio" name="rub-dp-1" value="2">2</label></td></tr>
+            <tr><td>没有把两个数值例子冒充证明</td><td class="rubric-cell"><label><input type="radio" name="rub-dp-2" value="0">0</label><label><input type="radio" name="rub-dp-2" value="1">1</label><label><input type="radio" name="rub-dp-2" value="2">2</label></td></tr>
+            <tr><td>追问能暴露"任意"的量词误解</td><td class="rubric-cell"><label><input type="radio" name="rub-dp-3" value="0">0</label><label><input type="radio" name="rub-dp-3" value="1">1</label><label><input type="radio" name="rub-dp-3" value="2">2</label></td></tr>
+            <tr><td>同时关注条件（区间）与理由（每步符号有出处）</td><td class="rubric-cell"><label><input type="radio" name="rub-dp-4" value="0">0</label><label><input type="radio" name="rub-dp-4" value="1">1</label><label><input type="radio" name="rub-dp-4" value="2">2</label></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <label class="rubric-veto"><input type="checkbox" data-role="veto">否决标记：我发现自己的表述存在数学错误（公式、区间、量词），需要先修正再进入改课。</label>
+      <p class="rubric-score" style="margin-top:8px;"><b>未评分</b> · 保存于本浏览器</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2-no">7</span>完成练习，改写你的问题链</h2>
+    <p>把示范问题链改成适合你学生的版本：工作台中填写可观察目标、问题链、预期错误与理解检查四项，即可预览、打印与导出。</p>
+    <div class="practice__actions" style="margin-top:18px;">
+      <a class="btn btn--pill-deep" href="../../workspace/?unit=definition-proof&amp;new=1">进入工作台，改写我的问题链
+        <span class="btn__badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12L12 4M6 4h6v6"/></svg></span>
+      </a>
+      <a class="btn btn--ghost" href="../concept-intro/">继续 U1 概念引入</a>
+      <a class="btn btn--ghost" href="../error-diagnosis/">继续 U3 错误诊断</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <a class="nav__logo" href="../../"><span class="nav__logo-mark">π</span>数学教师成长工作台</a>
+      <p>帮助个人高中数学教师，把一个教学难点转化为可复盘的课堂改进任务。暂用名，正式名称与域名待定。</p>
+    </div>
+    <div class="footer__links">
+      <a href="../../">首页</a>
+      <a href="../../topics/monotonicity/">单调性专题</a>
+      <a href="../../workspace/">工作台</a>
+      <a href="../../records/">我的记录</a>
+      <a href="../../about/">说明</a>
+    </div>
+  </div>
+  <div class="footer__note">
+    MT-MONO-U2 · v0.1.0 草稿（未复核）· 2026-10-02 · 练习与草稿仅保存在本浏览器 · 导出不等于已实际使用。
+  </div>
+</footer>
+
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
